@@ -7,6 +7,7 @@ import TipoExcluirCliente from "./tipoExcluirCliente"
 import TipoListagemClientes from "./tipoListagemClientes"
 import CadastroHospedagem from "./cadastro/cadastroHospedagem"
 import ListagemHospedes from "./listagem/listagemHospedes"
+import FinalizarHospedagem from "./excluir/finalizarHospedagem"
 
 export default class Principal extends Processo {
     constructor() {
@@ -44,6 +45,10 @@ export default class Principal extends Processo {
                 break
             case 7:
                 this.processo = new ListagemHospedes()
+                this.processo.processar()
+                break
+            case 8:
+                this.processo = new FinalizarHospedagem()
                 this.processo.processar()
                 break
             case 0:
